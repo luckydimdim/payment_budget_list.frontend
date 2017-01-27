@@ -6,7 +6,8 @@ import 'package:js/js.dart';
 
 @Component(selector: 'payment-budget-list')
 @View(
-    templateUrl: 'payment_budget_list_component.html', directives: const [RouterLink])
+    templateUrl: 'payment_budget_list_component.html',
+    directives: const [RouterLink])
 class PaymentBudgetListComponent implements OnInit, OnDestroy {
   static const String route_name = "PaymentBudgetList";
   static const String route_path = "paymentBudgetList";
@@ -20,12 +21,9 @@ class PaymentBudgetListComponent implements OnInit, OnDestroy {
 
   PaymentBudgetListComponent(this._router, this._alertService) {}
 
+  @override
+  void ngOnInit() {}
 
   @override
-  void ngOnInit() {
-  }
-
-  @override
-  void ngOnDestroy() {
-  }
+  void ngOnDestroy() {}
 }
