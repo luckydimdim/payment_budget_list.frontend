@@ -3,6 +3,7 @@ import 'package:angular2/router.dart';
 
 import 'package:alert/alert_service.dart';
 import 'package:js/js.dart';
+import 'dart:html';
 
 @Component(selector: 'payment-budget-list')
 @View(
@@ -21,8 +22,23 @@ class PaymentBudgetListComponent implements OnInit, OnDestroy {
 
   PaymentBudgetListComponent(this._router, this._alertService) {}
 
+  // import 'dart:html';
+  void breadcrumbInit(){
+    var  breadcrumbContent = querySelector('#breadcrumbContent') as DivElement;
+
+    if (breadcrumbContent == null)
+      return;
+
+    breadcrumbContent.innerHtml = '''
+            <li class="breadcrumb-item"><a href="#/master/dashboard">Главная</a></li>
+            <li class="breadcrumb-item active">Список платежных бюджетов</li>
+    ''';
+  }
+
   @override
-  void ngOnInit() {}
+  void ngOnInit() {
+    breadcrumbInit();
+  }
 
   @override
   void ngOnDestroy() {}
